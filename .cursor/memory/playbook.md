@@ -38,6 +38,13 @@ captures an edge case the Reviewer found and the recommended way to handle it.
 - **Seen in**: `tools/reviewer/src/reviewerPrompt.ts`
 - **Update (2026-06-18T21:43)**: sentinel/last-block/escaping are done. Residual: an empty `<CONCERNS></CONCERNS>` reports `parseOk: true` but substitutes the sentinel (gate `parseOk` on non-empty); the frontmatter strip assumes LF + trailing newline (tolerate `\r?\n`); the prompt lists memory paths as bare relative while only `root` is anchored (join under `root`); unit-test `buildReviewerPrompt` escaping, not just `parseReview`.
 
+### When you touch the docs (`README.md`, `tools/reviewer/README.md`, `architecture.md`)
+- **Edge case**: SDK API names drift from the implementation.
+- **Why**: `orchestrator.ts` switched from `Agent.prompt(...)` to `Agent.create(...)` + `agent.send(...)` during the timeout/dispose refactor, but the docs still say `Agent.prompt`.
+- **Do**: describe the reviewer as `Agent.create(...)` + `agent.send(...)`; re-verify command names, flags, and paths against the code when editing docs.
+- **Don't**: let prose API names lag a refactor.
+- **Seen in**: `README.md`, `tools/reviewer/README.md`, `.cursor/memory/architecture.md`
+
 ### When you configure a Node-executed ESM CLI (`tsconfig.json`)
 - **Edge case**: `moduleResolution: "bundler"` silently drops the `.js`-extension requirement that Node ESM enforces at runtime, so a bad import type-checks but crashes.
 - **Why**: bundler mode assumes a bundler, not Node's resolver.

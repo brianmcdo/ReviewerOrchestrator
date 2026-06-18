@@ -1,8 +1,1 @@
-b9470778764f72c5257a3361590d2994547f90e1	tools/reviewer/.gitignore
-d217c41fd0881744f19397c9c8443f1a06b75f53	tools/reviewer/README.md
-8d81ac0a7072373759a93be87533508f764721c1	tools/reviewer/package.json
-8a20b88846ca65cafff71c59171a5f7690ae6b2b	tools/reviewer/src/git.ts
-c546795a3afc5fb73470d1e804466323bf31f2b2	tools/reviewer/src/orchestrator.ts
-c1e03ca62cf829ac93de959371d207e3af00f9b5	tools/reviewer/src/reviewerPrompt.test.ts
-6bdf54b70d2ae668e38c73f0a44fe59f3ac76755	tools/reviewer/src/reviewerPrompt.ts
-eb8a18ad86d0c85c84132d9fd9ce1e04ce53f438	tools/reviewer/tsconfig.json
+d1bb87ca7cdb9b7aab5b20a7251dbab516f6bdda	README.md

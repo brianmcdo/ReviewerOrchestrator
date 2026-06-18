@@ -83,3 +83,9 @@ Prior BLOCKER/MAJOR/MINOR items from the 2026-06-18T21:32:28Z entry were verifie
 
 ### tools/reviewer/.gitignore, README.md (reviewed inline)
 - [NONE] reviewed, no concerns (README updated to match read-only reviewer + env vars).
+
+## 2026-06-18T21:50:50Z - README.md
+
+- [MINOR] Doc/code drift: `README.md` (SDK section) and `tools/reviewer/README.md` both say each reviewer runs via `Agent.prompt(...)`, but `orchestrator.ts` (`reviewFile`) actually uses `Agent.create(...)` + `agent.send(...)` + `waitWithTimeout` (changed during the timeout/dispose refactor). `architecture.md` carries the same stale phrasing -> reword all three to `Agent.create(...)` + `agent.send(...)`.
+- [NIT] In-IDE step 1 lists `/document-codebase` as populating architecture/patterns/playbook but omits that the command also records a baseline `concerns.md` entry -> optionally mention `concerns.md`.
+- Everything else verified accurate: all links/paths resolve, `npm run review` + flags match `parseArgs`, hook behavior (loop_limit 3, signature state, exclusions, followup_message) correct, memory table + severity scale + single-writer + hand-synced exclude lists + Node>=18 all correct.
