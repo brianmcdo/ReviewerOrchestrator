@@ -1,0 +1,26 @@
+{
+  "name": "reviewer-orchestrator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SDK-based orchestrator: a durable implementor agent plus a fresh isolated reviewer agent per changed file, feeding concerns back to the implementor.",
+  "bin": {
+    "reviewer": "dist/orchestrator.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node --test dist/reviewerPrompt.test.js",
+    "review": "tsc -p tsconfig.json && node dist/orchestrator.js"
+  },
+  "dependencies": {
+    "@cursor/sdk": "^1.0.19"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  }
+}
